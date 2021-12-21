@@ -159,15 +159,14 @@
 
 #### site.yml
 
----
-  - name: test my module
-    hosts: localhost
-    tasks:
-    - name  : run my module
-      netology.my_collection.my_new_module:
-        path: "/tmp/file.txt"
-        content: "new content"
-      register: out_msg
-    - name: dump out_msg
-      debug:
-        msg: "{{ out_msg }}"
+    - name: test my module
+      hosts: localhost
+      tasks:
+      - name  : run my module
+        netology.my_collection.my_new_module:
+          path: "/tmp/file.txt"
+          content: "new content"
+        register: out_msg
+      - name: dump out_msg
+        debug:
+          msg: "{{ out_msg }}"
